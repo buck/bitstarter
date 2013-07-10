@@ -7,7 +7,7 @@ var app = express.createServer(express.logger());
 var contents = fs.readFileSync(infile).toString();
 
 var buffer = new Buffer(1000);
-buffer.write(fs.readFileSync(infile,{encoding: 'utf8', flag: 'r'}));
+buffer.write(fs.readFileSync(infile));
 
 
 app.get('/', function(request, response) {
