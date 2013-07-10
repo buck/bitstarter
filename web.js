@@ -6,12 +6,12 @@ var app = express.createServer(express.logger());
 
 var contents = fs.readFileSync(infile).toString();
 
-// var buffer = new Buffer(1000);
-// buffer.write(fs.readFileSync(infile,{encoding: 'utf-8', flag: 'r'}));
+var buffer = new Buffer(1000);
+buffer.write(fs.readFileSync(infile,{encoding: 'utf-8', flag: 'r'}));
 
 
 app.get('/', function(request, response) {
-  response.send(fs.readFileSync(infile).toString());
+  response.send(buffer.toString());
 });
 
 var port = process.env.PORT || 5000;
