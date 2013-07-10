@@ -11,7 +11,7 @@ buffer.write(fs.readFileSync(infile,{encoding: 'utf-8', flag: 'r'}));
 
 
 app.get('/', function(request, response) {
-  response.send(buffer.toString());
+  response.send(buffer.toString('utf8'));
 });
 
 var port = process.env.PORT || 5000;
