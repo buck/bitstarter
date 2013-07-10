@@ -11,7 +11,7 @@ var contents = fs.readFileSync(infile).toString();
 
 
 app.get('/', function(request, response) {
-  response.send(contents);
+  response.send(fs.readFileSync(infile).toString());
 });
 
 var port = process.env.PORT || 5000;
