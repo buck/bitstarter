@@ -4,7 +4,8 @@ var infile = 'index.html';
 
 var app = express.createServer(express.logger());
 
-var buffer = new Buffer(fs.readFileSync(infile));
+var buffer = new Buffer(1000);
+buffer = fs.readFileSync(infile);
 
 
 app.get('/', function(request, response) {
