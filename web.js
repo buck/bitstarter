@@ -9,6 +9,7 @@ var contents = fs.readFileSync(infile).toString();
 var buffer = new Buffer(fs.readFileSync(infile).toString());
 // buffer.write(fs.readFileSync(infile).toString());
 
+app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
   response.send(buffer.toString());
